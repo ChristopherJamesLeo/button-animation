@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hover Effect</title>
+    <style type="text/css">
+        body{
+            font-family: sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        a{
+            width: 300px;
+            height: 60px;
+            /* background-color: red; */
+            color: #fff;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-align: center;
+            line-height: 60px;
+            position: relative;
+            /* mix-blend-mode: multiply; */
+            /* အရောင်များ ရော‌နှောချင်ပါက အသုံးပြုနိင်သည် အရှေ့အရောင်နှင့် အနောက်အရောင်ကို မြင်ရစေရန် ဖန်တီးလိုက်ခြင်းဖြစ်သည်
+            parent တွင်ရေးပေးရမည်  */
+        }
+        a::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: skyblue;
+            position: absolute;
+            left: -3px;
+            top: -3px;
+            z-index: -1;
+            transition: all 0.2s ease-in-out 0s;
+
+            mix-blend-mode: multiply;
+            
+        }
+        a::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: steelblue;
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            z-index: -1;
+            transition: all 0.2s ease-in-out 0s;
+            mix-blend-mode: multiply;
+        }
+        a:hover::before{
+            left: 20px;
+            top: -10px;
+            box-shadow: 10px -10px 0px steelblue;
+        }
+        a:hover::after{
+            left:-3px;
+            top: 10px;
+            box-shadow: 10px -10px 0px skyblue;
+        }
+    </style>
+</head>
+<body>
+    <a href="#">Hover Me</a>
+</body>
+</html>

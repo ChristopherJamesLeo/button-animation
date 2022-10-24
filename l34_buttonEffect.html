@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Button Hover Effect</title>
+    <style type="text/css">
+        :root{
+            --w : 300px;
+            --h : 50px;
+            
+        }
+        body{
+            height: 100vh;
+            background-color: #272727;
+            display: grid;
+            place-items: center;
+        }
+        .btn{
+            /* --w : 300px;
+            --h : 50px; custom property သည် {} တစ်ခုတည်းတွင်သာ အသံဒးပြုနိုင်မည်ဖြစ်သည် local property များ သည် main parent အတွင်းရှိ child များတွင်အလုပ်လုပ်သည်*/ 
+            /* custom property //  */
+            width: var(--w);/* system property  */
+            height: var(--h);
+            text-decoration: none;
+            border: 1px solid #fff;
+            position: relative;
+            
+            display: flex;
+        }
+        span {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            font-size: 20px;
+            text-align: center;
+            letter-spacing: 2px;
+            color: #fff;
+            font-weight: 700;
+            line-height: 50px;
+            position: absolute;
+        }
+        em{
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            transform: scaleX(0);
+            transform-origin: right;
+             transition: all 0.3s ease-in-out calc( 0.02s * var(--delay));
+            /* transition: all 0.3s ease-in-out; */
+        }
+        .btn:hover em{
+            transform: scaleX(1);
+        }
+        .btn:hover span{
+            color: #000;
+        }
+        /* .btn em:nth-child(1){
+            transition-delay: 0.02s;
+        }
+        .btn em:nth-child(2){
+            transition-delay: 0.04s;
+        }
+        .btn em:nth-child(3){
+            transition-delay: 0.06s;
+        }
+        .btn em:nth-child(4){
+            transition-delay: 0.08s;
+        }
+        .btn em:nth-child(5){
+            transition-delay: 0.1s;
+        }
+        .btn em:nth-child(6){
+            transition-delay: 0.12s;
+        }
+        .btn em:nth-child(7){
+            transition-delay: 0.14s;
+        }
+        .btn em:nth-child(8){
+            transition-delay: 0.16s;
+        }
+        .btn em:nth-child(9){
+            transition-delay: 0.18s;
+        }
+        .btn em:nth-child(10){
+            transition-delay: 0.2s;
+        } */
+
+    </style>
+</head>
+<body>
+    <a href="#" class="btn">
+        <em style="--delay : 1"></em>
+        <em style="--delay : 2"></em>
+        <em style="--delay : 3"></em>
+        <em style="--delay : 4"></em>
+        <em style="--delay : 5"></em>
+        <em style="--delay : 6"></em>
+        <em style="--delay : 7"></em>
+        <em style="--delay : 8"></em>
+        <em style="--delay : 9"></em>
+        <em style="--delay : 10"></em>
+        <span>Hover Me</span>
+    </a>
+</body>
+</html>

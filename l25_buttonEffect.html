@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Button effect</title>
+    <style type="text/css">
+        body{
+            font-family: sans-serif;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        .btn {
+            width: 300px;
+            height: 100px;
+            letter-spacing: 2px;
+            background-color: tomato;
+            color: #fff;
+            font-size: 27px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            clip-path: polygon(100% 53%, 79% 100%, 0 100%, 0 0, 100% 0 );
+            position: relative;
+
+        }
+        .btn::before{
+            content:"Thank You";
+            width: 100%;
+            height: 100%;
+            background-color: darkblue;
+            color: tomato;
+            /* display: grid;
+            place-items: center; */
+            line-height: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            clip-path: polygon(100% 50%, 0 50%, 0 0, 100% 0 );
+            transform: translateY(-100%);
+            transition: 0.5s;
+        }
+        .btn:hover::before{
+            transform: translateY(0%);
+        }
+        .btn::after{
+            content: "Thank You";
+            width: 100%;
+            height: 100%;
+            background-color: steelblue;
+            color: #fff;
+            line-height: 100px;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+            clip-path: polygon(100% 100%, 0 100%, 0 50%, 100% 50%);
+            transform: translateY(100%);
+            transition: 0.5s;
+        }
+        .btn:hover::after{
+            transform: translateY(0%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!-- <a href="#">Hover Me</a> -->
+        <button type="button" class="btn">Hover Me</button>
+    </div>
+</body>
+</html>
